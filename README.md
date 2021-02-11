@@ -1,2 +1,2 @@
-# DynamoDB101
+# DynamoDB 101
 Getting started with DynamoDB
