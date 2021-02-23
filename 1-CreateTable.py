@@ -4,33 +4,33 @@ def create_movie_table(table_name):
     
     dynamodb = boto3.client("dynamodb")
     table = dynamodb.create_table(
-        TableName=table_name,
-        KeySchema=[
-            {
-                'AttributeName': 'year',
-                'KeyType': 'HASH'  # Partition key
-            },
-            {
-                'AttributeName': 'title',
-                'KeyType': 'RANGE'  # Sort key
-            }
-        ],
-        AttributeDefinitions=[
-            {
-                'AttributeName': 'year',
-                'AttributeType': 'N'
-            },
-            {
-                'AttributeName': 'title',
-                'AttributeType': 'S'
-            },
-
-        ],
-        ProvisionedThroughput={
-            'ReadCapacityUnits': 10,
-            'WriteCapacityUnits': 10
-        }
-    )
+                                    TableName=table_name,
+                                    KeySchema=[
+                                        {
+                                            'AttributeName': 'year',
+                                            'KeyType': 'HASH'  # Partition key
+                                        },
+                                        {
+                                            'AttributeName': 'title',
+                                            'KeyType': 'RANGE'  # Sort key
+                                        }
+                                    ],
+                                    AttributeDefinitions=[
+                                        {
+                                            'AttributeName': 'year',
+                                            'AttributeType': 'N'
+                                        },
+                                        {
+                                            'AttributeName': 'title',
+                                            'AttributeType': 'S'
+                                        },
+                            
+                                    ],
+                                    ProvisionedThroughput={
+                                        'ReadCapacityUnits': 10,
+                                        'WriteCapacityUnits': 10
+                                    }
+                                )
     
     return table
 

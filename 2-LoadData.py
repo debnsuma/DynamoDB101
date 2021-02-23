@@ -13,6 +13,7 @@ def load_data(data):
         print("Adding movie:", year, title)
         table.put_item(Item=item)
 
+# Starts Here
 if __name__ == '__main__':
     with open("data.json") as json_file:
         movie_list = json.load(json_file, parse_float=Decimal)
